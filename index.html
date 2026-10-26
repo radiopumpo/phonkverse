@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#07090c">
   <meta name="description" content="PHONKVERSE — more than music. A world. Discover the culture, creators and sounds connecting a new global phonk universe.">
   <title>PHONKVERSE — More Than Music. A World.</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=globe-fix-2">
 </head>
 <body class="home-page">
   <header class="site-header">
@@ -15,23 +15,53 @@
     <nav id="primary-nav" class="primary-nav">
       <a class="active" href="index.html">Home</a>
       <a href="#albums">Albums</a>
-      <a href="#ecosystem">World</a>
+      <a href="#world">World</a>
       <a href="#community">Community</a>
     </nav>
     <a class="header-cta" href="#community">Join the Verse <span>↗</span></a>
   </header>
 
   <main>
-    <section class="hero hero-reference" aria-label="PHONKVERSE: a global phonk ecosystem">
-      <img class="hero-reference-image" src="./assets/images/home-hero-reference.webp" alt="PHONKVERSE illustrated hero: Phonkita and Phonkazo flank a glowing globe above a neon-lit crowd." onerror="this.onerror=null;this.src='./assets/images/home-concept.png';this.classList.add('hero-fallback')" />
-      <div class="hero-globe-motion" aria-hidden="true">
-        <div class="hero-globe-longitudes"></div>
-        <div class="hero-globe-latitude hero-globe-latitude-one"></div>
-        <div class="hero-globe-latitude hero-globe-latitude-two"></div>
-        <div class="hero-globe-sweep"></div>
+    <section class="world-scroll" id="world" aria-label="Explore the PHONKVERSE globe">
+      <div class="world-sticky">
+        <div class="world-backdrop" aria-hidden="true"></div>
+        <div class="world-topline"><span>PHONKVERSE / THE LIVING WORLD</span><span id="world-progress-label">01 — DISCOVER</span></div>
+
+        <article class="world-avatar world-avatar-italy" id="avatar-italy">
+          <span class="avatar-country">ITALY · EUROPE</span>
+          <h1>PHONK<span>ITA</span></h1>
+          <p>L’Italia non è in vendita.</p>
+          <a href="phonkita.html">Explore Phonkita <span>↗</span></a>
+        </article>
+
+        <div class="globe-stage" id="globe-stage">
+          <canvas id="phonkverse-globe" aria-label="Interactive 3D globe. Drag to rotate, use the mouse wheel or plus and minus buttons to zoom."></canvas>
+          <div class="globe-hud"><span class="hud-dot"></span> LIVE CULTURE MAP <span id="globe-coordinates">ROTATE / EXPLORE</span></div>
+          <div class="globe-controls" aria-label="Globe controls">
+            <button type="button" id="globe-zoom-in" aria-label="Zoom in">+</button>
+            <button type="button" id="globe-zoom-out" aria-label="Zoom out">−</button>
+            <button type="button" id="globe-reset" aria-label="Reset globe view">↺</button>
+          </div>
+          <div class="globe-hint" id="globe-hint">DRAG TO ROTATE · SCROLL TO ZOOM · TAP A PIN</div>
+        </div>
+
+        <article class="world-avatar world-avatar-spain" id="avatar-spain">
+          <span class="avatar-country">SPAIN · EUROPE</span>
+          <h2>PHONK<span>AZO</span></h2>
+          <p>España no se vende.</p>
+          <a href="phonkazo.html">Explore Phonkazo <span>↗</span></a>
+        </article>
+
+        <div class="poi-card" id="poi-card" aria-live="polite">
+          <button class="poi-close" id="poi-close" aria-label="Close location details">×</button>
+          <span class="poi-kicker">PHONKVERSE PIN / <span id="poi-region">EUROPE</span></span>
+          <h3 id="poi-title">A world of scenes.</h3>
+          <p id="poi-description">Choose a pin on the globe to discover a movement.</p>
+          <a id="poi-link" href="#albums">Discover movement ↗</a>
+        </div>
+
+        <div class="world-bottomline"><span>DIFFERENT PLACES. SAME FREQUENCY.</span><span>SCROLL TO ENTER THE VERSE ↓</span></div>
       </div>
-      <a class="hero-hotspot hero-hotspot-explore" href="#ecosystem" aria-label="Explore the PHONKVERSE world"></a>
-      <a class="hero-hotspot hero-hotspot-trailer" href="#albums" aria-label="Discover the albums"></a>
     </section>
 
     <section id="albums" class="section albums-section">
@@ -75,6 +105,6 @@
   </main>
 
   <footer class="site-footer"><a class="brand" href="index.html"><span class="brand-mark">♛</span><span>PHONKVERSE</span></a><p>Music / Culture / Community / Global</p><span class="footer-motto">DIFFERENT PLACES. SAME FREQUENCY.</span></footer>
-  <script src="js/main.js"></script>
+  <script src="js/main.js"></script>\n  <script type="module" src="js/globe.js"></script>
 </body>
 </html>
