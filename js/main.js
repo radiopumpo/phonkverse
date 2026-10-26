@@ -10,12 +10,3 @@ if (menuButton && nav) {
     menuButton.setAttribute('aria-expanded', 'false');
   }));
 }
-
-// Demo controls deliberately do not pretend to play unreleased music.
-// Replace each track-action button with a real official listening URL when available.
-document.querySelectorAll('.track-action').forEach(button => {
-  button.addEventListener('click', () => {
-    const track = button.closest('.track-row')?.querySelector('h3')?.textContent || 'this track';
-    alert(`Listening link for “${track}” can be added here when the release is available.`);
-  });
-});
