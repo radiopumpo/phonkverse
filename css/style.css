@@ -214,3 +214,24 @@ html { scroll-behavior: smooth; }
   .poi-card { bottom: 150px; } .world-bottomline { bottom: 12px; font-size: 7px; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .globe-pin .pin-ring,.hud-dot { animation: none; } .poi-card { transition: none; } }
+
+/* ===== Track player ===== */
+.track-row { position: relative; }
+.track-row::after { content: ""; position: absolute; left: 0; bottom: -1px; height: 2px; width: var(--prog, 0%); background: var(--accent); transition: width .25s linear; }
+.track-row.is-playing .track-info h3 { color: var(--accent); }
+.track-action { font-size: .7rem; touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+.track-row.is-playing .track-action { background: var(--accent); color: #101010; }
+
+/* ===== Mobile / iPhone fixes for the world stage ===== */
+.globe-stage::before { content: ""; position: absolute; inset: 7%; border-radius: 50%; z-index: -1; background: radial-gradient(circle, #04070b 0 70%, transparent 71%); } /* opaque backing: art can never show through the globe */
+.world-avatar { opacity: calc(.7 + var(--p) * .3); }
+@media (max-width: 800px) {
+  .avatar-art { background-size: auto 42%; opacity: .85; }
+  .avatar-art-italy { -webkit-mask-image: linear-gradient(90deg,#000 0,#000 22%,transparent 46%); mask-image: linear-gradient(90deg,#000 0,#000 22%,transparent 46%); }
+  .avatar-art-spain { -webkit-mask-image: linear-gradient(270deg,#000 0,#000 22%,transparent 46%); mask-image: linear-gradient(270deg,#000 0,#000 22%,transparent 46%); }
+  .world-title { top: 22%; } .world-title .enter-cta { display: none; } .world-title .crown { font-size: 30px; }
+  .world-title h1 { font-size: clamp(2.6rem, 14vw, 4.4rem); }
+  .globe-stage { width: min(104vw, 66svh); top: 57%; }
+  .globe-hud { top: 100px; }
+  .world-avatar { background: rgba(7,10,14,.94); }
+}
