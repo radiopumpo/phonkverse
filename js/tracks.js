@@ -75,10 +75,10 @@ export const ALBUMS = {
   "tracks": [
    {
     "n": "01",
-    "title": "Alquiler de Lujo, Vida de Mierda",
+    "title": "Phonkazo Chollazo",
     "mood": "Hard / satirical phonk",
     "desc": "Luxury on the outside; impossible maths underneath.",
-    "src": "assets/songs/phonkazo/01-alquiler-de-lujo-vida-de-mierda.mp3"
+    "src": "assets/songs/phonkazo/01-phonkazo-chollazo.mp3"
    },
    {
     "n": "02",
@@ -103,10 +103,10 @@ export const ALBUMS = {
    },
    {
     "n": "05",
-    "title": "La Última Terraza",
+    "title": "La Penùltima Terraza",
     "mood": "Groovy / late-night club phonk",
     "desc": "Friends, city lights and one more night together.",
-    "src": "assets/songs/phonkazo/05-la-ultima-terraza.mp3"
+    "src": "assets/songs/phonkazo/05-la-penultima-terraza.mp3"
    },
    {
     "n": "06",
