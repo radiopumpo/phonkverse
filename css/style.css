@@ -67,3 +67,87 @@
   }
   .hero-reference .hero-hotspot { top: 81%; height: 10%; }
 }
+
+
+/* Subtle animated globe overlay: gives the globe in the hero real motion
+   while preserving the approved artwork, characters, and wordmark. */
+.hero-globe-motion {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: -14%;
+  width: min(35%, 420px);
+  aspect-ratio: 1;
+  transform: translateX(-50%);
+  border: 1px solid rgba(117, 255, 221, .42);
+  border-radius: 50%;
+  pointer-events: none;
+  overflow: hidden;
+  opacity: .66;
+  mix-blend-mode: screen;
+  box-shadow: inset -24px -8px 38px rgba(0, 0, 0, .35),
+              inset 10px 0 25px rgba(122, 255, 226, .12),
+              0 0 24px rgba(48, 255, 214, .18);
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 50%, rgba(0,0,0,.65) 68%, transparent 73%);
+  mask-image: radial-gradient(ellipse at center, #000 50%, rgba(0,0,0,.65) 68%, transparent 73%);
+}
+.hero-globe-longitudes {
+  position: absolute;
+  inset: -8% 0;
+  border-radius: 50%;
+  background: repeating-linear-gradient(90deg,
+    transparent 0 12%,
+    rgba(133, 255, 229, .26) 12.2% 12.6%,
+    transparent 12.8% 25%);
+  transform-origin: center;
+  animation: hero-globe-spin 18s linear infinite;
+}
+.hero-globe-longitudes::before,
+.hero-globe-longitudes::after {
+  content: "";
+  position: absolute;
+  inset: 0 24%;
+  border: 1px solid rgba(132, 255, 225, .42);
+  border-radius: 50%;
+}
+.hero-globe-longitudes::after {
+  inset: 0 39%;
+  border-color: rgba(132, 255, 225, .3);
+}
+.hero-globe-latitude {
+  position: absolute;
+  left: 2%;
+  right: 2%;
+  height: 28%;
+  top: 36%;
+  border: 1px solid rgba(132, 255, 225, .34);
+  border-radius: 50%;
+}
+.hero-globe-latitude-two {
+  top: 20%;
+  height: 60%;
+}
+.hero-globe-sweep {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg,
+    transparent 0deg 235deg,
+    rgba(123, 255, 222, .02) 250deg,
+    rgba(123, 255, 222, .25) 282deg,
+    rgba(255, 93, 73, .16) 300deg,
+    transparent 322deg 360deg);
+  animation: hero-globe-spin 12s linear infinite;
+}
+@keyframes hero-globe-spin { to { transform: rotate(360deg); } }
+@media (max-width: 640px) {
+  .hero-globe-motion {
+    top: -7%;
+    width: 58%;
+    opacity: .48;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-globe-longitudes,
+  .hero-globe-sweep { animation: none; }
+}
