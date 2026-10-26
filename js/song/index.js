@@ -24,6 +24,7 @@ function render() {
   document.title = `${t.title} — ${album.name} | PHONKVERSE`;
   $("song-album").textContent = album.name; $("song-num").textContent = `${t.n} / ${String(album.tracks.length).padStart(2, "0")}`;
   $("song-title").textContent = t.title; $("song-mood").textContent = t.mood; $("song-desc").textContent = t.desc;
+  const art = $("song-art"); art.href = album.page; art.setAttribute("aria-label", `${album.name} album`); $("song-art-img").src = album.art; $("song-art-img").alt = `${album.name} album artwork`;
   $("back-link").href = album.page + "#tracklist"; $("prev").disabled = i === 0; $("next").disabled = i === album.tracks.length - 1;
   seek.disabled = false; seek.value = 0; status();
   history.replaceState(null, "", url);
