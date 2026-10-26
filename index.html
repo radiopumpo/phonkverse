@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#07090c">
   <meta name="description" content="PHONKVERSE — more than music. A world. Discover the culture, creators and sounds connecting a new global phonk universe.">
   <title>PHONKVERSE — More Than Music. A World.</title>
-  <link rel="stylesheet" href="css/style.css?v=globe-fix-2">
+  <link rel="stylesheet" href="css/style.css?v=globe-3">
 </head>
 <body class="home-page">
   <header class="site-header">
@@ -23,43 +23,50 @@
 
   <main>
     <section class="world-scroll" id="world" aria-label="Explore the PHONKVERSE globe">
-      <div class="world-sticky">
-        <div class="world-backdrop" aria-hidden="true"></div>
+      <div class="world-sticky" id="world-sticky">
+        <div class="world-sky" aria-hidden="true"></div>
         <div class="world-topline"><span>PHONKVERSE / THE LIVING WORLD</span><span id="world-progress-label">01 — DISCOVER</span></div>
 
-        <article class="world-avatar world-avatar-italy" id="avatar-italy">
-          <span class="avatar-country">ITALY · EUROPE</span>
-          <h1>PHONK<span>ITA</span></h1>
-          <p>L’Italia non è in vendita.</p>
-          <a href="phonkita.html">Explore Phonkita <span>↗</span></a>
-        </article>
+        <div class="avatar-art avatar-art-italy" aria-hidden="true"></div>
+        <div class="avatar-art avatar-art-spain" aria-hidden="true"></div>
 
         <div class="globe-stage" id="globe-stage">
-          <canvas id="phonkverse-globe" aria-label="Interactive 3D globe. Drag to rotate, use the mouse wheel or plus and minus buttons to zoom."></canvas>
-          <div class="globe-hud"><span class="hud-dot"></span> LIVE CULTURE MAP <span id="globe-coordinates">ROTATE / EXPLORE</span></div>
-          <div class="globe-controls" aria-label="Globe controls">
-            <button type="button" id="globe-zoom-in" aria-label="Zoom in">+</button>
-            <button type="button" id="globe-zoom-out" aria-label="Zoom out">−</button>
-            <button type="button" id="globe-reset" aria-label="Reset globe view">↺</button>
-          </div>
-          <div class="globe-hint" id="globe-hint">DRAG TO ROTATE · SCROLL TO ZOOM · TAP A PIN</div>
+          <canvas id="phonkverse-globe" tabindex="0" aria-label="Interactive 3D night-view globe. Drag or use arrow keys to rotate. Pins: Phonkita, Phonkazo, The Wider Verse."></canvas>
+          <div class="globe-markers"></div>
+          <div class="globe-fallback" aria-hidden="true"></div>
         </div>
 
+        <div class="world-title">
+          <span class="crown" aria-hidden="true">♛</span>
+          <h1>PHONKVERSE</h1>
+          <p class="tagline">More than music. A world.</p>
+          <p class="pillars"><span>Explore</span><i>/</i><span>Create</span><i>/</i><span>Connect</span><i>/</i><span>Progress</span></p>
+          <a class="button button-lime enter-cta" href="#albums">Enter the universe <span>→</span></a>
+        </div>
+
+        <div class="globe-hud"><span class="hud-dot"></span> LIVE CULTURE MAP <span id="globe-coordinates">—</span></div>
+        <div class="globe-controls" role="group" aria-label="Globe controls">
+          <button type="button" id="globe-zoom-in" aria-label="Zoom in">+</button>
+          <button type="button" id="globe-zoom-out" aria-label="Zoom out">−</button>
+          <button type="button" id="globe-reset" aria-label="Reset globe view">↺</button>
+          <button type="button" id="globe-pause" aria-label="Pause rotation" aria-pressed="false">❚❚</button>
+        </div>
+        <div class="globe-hint" id="globe-hint"></div>
+
+        <article class="world-avatar world-avatar-italy" id="avatar-italy">
+          <span class="avatar-country">ITALY · EUROPE</span><h2>PHONK<span>ITA</span></h2>
+          <p>L’Italia non è in vendita.</p><a href="phonkita.html">Explore Phonkita <span>↗</span></a>
+        </article>
         <article class="world-avatar world-avatar-spain" id="avatar-spain">
-          <span class="avatar-country">SPAIN · EUROPE</span>
-          <h2>PHONK<span>AZO</span></h2>
-          <p>España no se vende.</p>
-          <a href="phonkazo.html">Explore Phonkazo <span>↗</span></a>
+          <span class="avatar-country">SPAIN · EUROPE</span><h2>PHONK<span>AZO</span></h2>
+          <p>España no se vende.</p><a href="phonkazo.html">Explore Phonkazo <span>↗</span></a>
         </article>
 
         <div class="poi-card" id="poi-card" aria-live="polite">
           <button class="poi-close" id="poi-close" aria-label="Close location details">×</button>
           <span class="poi-kicker">PHONKVERSE PIN / <span id="poi-region">EUROPE</span></span>
-          <h3 id="poi-title">A world of scenes.</h3>
-          <p id="poi-description">Choose a pin on the globe to discover a movement.</p>
-          <a id="poi-link" href="#albums">Discover movement ↗</a>
+          <h3 id="poi-title"></h3><p id="poi-description"></p><a id="poi-link" href="#albums"></a>
         </div>
-
         <div class="world-bottomline"><span>DIFFERENT PLACES. SAME FREQUENCY.</span><span>SCROLL TO ENTER THE VERSE ↓</span></div>
       </div>
     </section>
@@ -105,6 +112,7 @@
   </main>
 
   <footer class="site-footer"><a class="brand" href="index.html"><span class="brand-mark">♛</span><span>PHONKVERSE</span></a><p>Music / Culture / Community / Global</p><span class="footer-motto">DIFFERENT PLACES. SAME FREQUENCY.</span></footer>
-  <script src="js/main.js"></script>\n  <script type="module" src="js/globe.js"></script>
+  <script src="js/main.js"></script>
+  <script type="module" src="js/globe/index.js"></script>
 </body>
 </html>

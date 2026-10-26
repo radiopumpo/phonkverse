@@ -28,3 +28,6 @@ Open `index.html` in a browser. For best results, use a local static server, e.g
 The homepage now includes a scroll-driven world stage and a WebGL globe powered by Three.js (loaded from jsDelivr). The globe can be dragged to rotate, zoomed with the wheel or on-screen controls, and has clickable Italy, Spain and global-map pins. Scroll progress moves the Phonkita and Phonkazo information panels outward and grows the globe. The remainder of the existing albums, ecosystem and community sections follows below.
 
 Note: the side panels are HTML components; the original hero illustration is not cut into independently movable character layers. This avoids rough image cut-outs while establishing the intended scroll interaction. The globe is a stylized interactive 3D globe/grid, with movement pins; a real terrain texture and user-generated map data can be added in a later iteration.
+
+## Globe v3 (module map)
+js/globe/config.js (content + tunables) · geo.js (lat/lon maths) · earth.js (night-Earth shader, clouds, atmosphere) · network.js (signals + animated arcs) · markers.js (DOM pins) · controls.js (drag/inertia/auto-rotate/focus) · ui.js (card, HUD, buttons) · scroll.js (sets CSS --p) · index.js (bootstrap). three.js is vendored in vendor/. Serve over http(s); ES modules do not load from file://.
