@@ -18,6 +18,7 @@ export function createAudio({ onTime, onEnd, onError, onState }) {
     el,
     load(src) { el.src = src; el.load(); },
     async toggle() {
+      if (el.paused) window.dispatchEvent(new Event("phonkverse:track-play"));   // stops the BGM
       wire(); if (ctx?.state === "suspended") await ctx.resume().catch(() => {});
       if (el.paused) return el.play().catch(onError); el.pause();
     },
