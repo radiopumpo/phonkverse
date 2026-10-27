@@ -244,3 +244,10 @@ html { scroll-behavior: smooth; }
 .bgm-toggle.is-off { color: #8d98a3; }
 .bgm-toggle.is-off::after { content: ""; position: absolute; left: 9px; right: 9px; top: 50%; height: 2px; background: currentColor; transform: rotate(-45deg); }
 .bgm-toggle[hidden] { display: none; }
+
+/* ===== "Powered by" badge (top-right, above the header; scrolls away) ===== */
+.powered-bar { display: flex; justify-content: flex-end; padding: 4px clamp(18px,4vw,58px); background: #030507; border-bottom: 1px solid #141a20; }
+.powered-by { display: inline-flex; align-items: center; gap: 8px; color: #8d98a3; font-size: .6rem; letter-spacing: .16em; text-transform: uppercase; transition: color .2s; }
+.powered-by img { display: block; width: 28px; height: 28px; border-radius: 50%; box-shadow: 0 0 12px rgba(255,90,200,.35); transition: transform .25s, box-shadow .25s; }
+.powered-by:hover { color: #fff; } .powered-by:hover img { transform: scale(1.1) rotate(-4deg); box-shadow: 0 0 16px rgba(80,255,220,.55); }
+.powered-by:focus-visible { outline: 2px solid var(--lime); outline-offset: 3px; border-radius: 6px; }
