@@ -14,7 +14,7 @@ export function createUI({ onZoom, onReset, onTogglePause, onClose }) {
 
   function show(loc) {
     $("poi-title").textContent = loc.name; $("poi-region").textContent = loc.region; $("poi-description").textContent = loc.description;
-    const a = $("poi-link"); a.href = loc.href; a.textContent = loc.cta;
+    const a = $("poi-link"); a.style.display = loc.soon ? "none" : ""; if (!loc.soon) { a.href = loc.href; a.textContent = loc.cta; }
     card.classList.add("is-open"); hint.textContent = "PIN SELECTED · CLOSE CARD TO KEEP EXPLORING";
   }
   function hide() { card.classList.remove("is-open"); hint.textContent = HINT; }

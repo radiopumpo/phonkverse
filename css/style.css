@@ -251,3 +251,16 @@ html { scroll-behavior: smooth; }
 .powered-by img { display: block; width: 28px; height: 28px; border-radius: 50%; box-shadow: 0 0 12px rgba(255,90,200,.35); transition: transform .25s, box-shadow .25s; }
 .powered-by:hover { color: #fff; } .powered-by:hover img { transform: scale(1.1) rotate(-4deg); box-shadow: 0 0 16px rgba(80,255,220,.55); }
 .powered-by:focus-visible { outline: 2px solid var(--lime); outline-offset: 3px; border-radius: 6px; }
+
+/* ===== Coming-soon chapters (data in js/upcoming.js) ===== */
+.upcoming-section { display: grid; grid-template-columns: minmax(220px, 1fr) 3fr; gap: clamp(18px, 3vw, 40px); align-items: start; }
+.soon-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.soon-card { position: relative; min-height: 190px; padding: 22px 20px; border: 1px dashed color-mix(in srgb, var(--c) 55%, #2a323b); border-radius: 6px; overflow: hidden;
+  background: radial-gradient(circle at 85% 0%, color-mix(in srgb, var(--c) 16%, transparent), transparent 60%), rgba(8,11,15,.7); }
+.soon-card h3 { margin: 6px 0 10px; font-family: "Barlow Condensed", sans-serif; font-style: italic; font-weight: 900; font-size: clamp(1.8rem, 3vw, 2.5rem); line-height: .95; color: var(--c); letter-spacing: .01em; }
+.soon-card p { margin: 0; color: #aeb7c0; font-size: .85rem; line-height: 1.55; }
+.soon-card .soon-country { color: #e6ebef; font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; }
+.soon-badge { position: absolute; top: 14px; right: 14px; padding: 3px 8px; border: 1px solid var(--c); border-radius: 3px; color: var(--c); font-size: .55rem; letter-spacing: .16em; }
+.tone-soon { --c: #b9a3ff; }
+.globe-pin.is-soon .pin-dot { opacity: .85; } .globe-pin.is-soon .pin-label::after { content: " · SOON"; opacity: .7; }
+@media (max-width: 800px) { .upcoming-section { grid-template-columns: 1fr; } .soon-grid { grid-template-columns: 1fr; } .soon-card { min-height: 0; } }

@@ -9,7 +9,7 @@ function glowTexture() {
   g.fillStyle = grd; g.fillRect(0, 0, 64, 64);
   const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
 }
-const TONES = { green: 0x4ce0b1, red: 0xff6a4d, lime: 0xcaff3b, amber: 0xffa23a };
+const TONES = { green: 0x4ce0b1, red: 0xff6a4d, lime: 0xcaff3b, amber: 0xffa23a, soon: 0xb9a3ff };
 
 /** Glowing signal nodes + animated arcs with travelling light pulses (the "living" network). */
 export function createNetwork() {

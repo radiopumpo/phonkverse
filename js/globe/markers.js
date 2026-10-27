@@ -11,7 +11,7 @@ export function createMarkers(container, globe, camera, onSelect) {
   const tmp = new THREE.Vector3(), world = new THREE.Vector3();
   const items = LOCATIONS.map((loc) => {
     const el = document.createElement("button");
-    el.type = "button"; el.className = `globe-pin tone-${loc.tone}`; el.dataset.id = loc.id;
+    el.type = "button"; el.className = `globe-pin tone-${loc.tone}${loc.soon ? " is-soon" : ""}`; el.dataset.id = loc.id;
     el.setAttribute("aria-label", `${loc.name} — ${loc.region}`);
     el.innerHTML = `<i class="pin-ring"></i><i class="pin-dot"></i><span class="pin-label">${loc.name}</span>`;
     el.addEventListener("click", (e) => { e.stopPropagation(); onSelect(loc); });

@@ -103,7 +103,7 @@ export const ALBUMS = {
    },
    {
     "n": "05",
-    "title": "La Penùltima Terraza",
+    "title": "La Penúltima Terraza",
     "mood": "Groovy / late-night club phonk",
     "desc": "Friends, city lights and one more night together.",
     "src": "assets/songs/phonkazo/05-la-penultima-terraza.mp3"

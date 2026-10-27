@@ -1,4 +1,6 @@
 // All tunables and content live here. Add a POI = add one object to LOCATIONS.
+import { UPCOMING } from "../upcoming.js";
+
 export const CONFIG = {
   radius: 1.6,
   spin: 0.075,          // rad/s idle rotation (≈ 84 s per revolution)
@@ -14,8 +16,8 @@ export const CONFIG = {
   },
 };
 
-// Clickable points of interest (rendered as real DOM buttons → keyboard + touch friendly).
-export const LOCATIONS = [
+// Clickable points of interest (+ "coming soon" chapters from js/upcoming.js that have a lat/lon) (rendered as real DOM buttons → keyboard + touch friendly).
+const BASE_LOCATIONS = [
   { id: "italy", name: "PHONKITA", region: "ITALY · EUROPE", lat: 41.9, lon: 12.5, tone: "green",
     description: "The Italian phonk movement: regional identity, underground sound and a new cultural voice.",
     href: "phonkita.html", cta: "Discover Phonkita ↗" },
@@ -27,6 +29,11 @@ export const LOCATIONS = [
     href: "#ecosystem", cta: "Explore the ecosystem ↗" },
 ];
 
+export const LOCATIONS = [
+  ...BASE_LOCATIONS,
+  ...UPCOMING.filter((u) => u.lat != null).map((u) => ({ id: u.id, name: u.name, region: `${u.country.toUpperCase()} · COMING SOON`, lat: u.lat, lon: u.lon, tone: "soon", soon: true, description: u.blurb })),
+];
+
 // Decorative, non-clickable "signals" that make the network feel alive.
 export const SIGNALS = [
   [51.5,-0.1],[52.5,13.4],[48.9,2.3],[38.7,-9.1],[41.4,2.2],[45.5,9.2],[40.8,14.3],
@@ -36,5 +43,6 @@ export const SIGNALS = [
 // Pairs of ids (LOCATIONS) or [lat,lon] that get an animated arc.
 export const LINKS = [
   ["italy","spain"],["spain","verse"],["italy",[6.5,3.4]],["italy",[25.2,55.3]],["spain",[-23.5,-46.6]],
+  ["spain","phonkada"],["italy","phonkami"],
   ["verse",[40.7,-74]],["italy",[52.5,13.4]],["spain",[51.5,-0.1]],["italy",[35.7,139.7]],["verse",[34,-118.2]],
 ];
