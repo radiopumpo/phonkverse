@@ -13,6 +13,7 @@
   };
   const stopAll = () => buttons.forEach((b) => setState(b, false));
   const play = (b) => {
+    window.dispatchEvent(new Event('phonkverse:track-play'));   // stops the BGM
     if (current !== b) { stopAll(); current = b; audio.src = b.dataset.src; }
     if (note) note.textContent = defaultNote;
     audio.play().then(() => setState(b, true)).catch(() => fail(b));   // must be called inside the tap handler (iOS)
