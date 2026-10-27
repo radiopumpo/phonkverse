@@ -13,7 +13,7 @@ const BGM = { src: "assets/audio/phonkversebgm.mp3", volume: 0.2, fadeIn: 1.5, f
   if (store.get("pv_bgm_off") === "1") return;
 
   const el = new Audio(BGM.src); el.loop = true; el.preload = "auto";
-  let ctx = null, gain = null, stopped = false, muted = store.get("pv_bgm_muted") === "1", starting = false;
+  let ctx = null, gain = null, stopped = false, muted = store.get("pv_bgm_muted") === "1";
 
   // iOS ignores audio.volume, so volume goes through a Web Audio GainNode (falls back to .volume elsewhere).
   try {
@@ -28,15 +28,14 @@ const BGM = { src: "assets/audio/phonkversebgm.mp3", volume: 0.2, fadeIn: 1.5, f
     (function step(n) { const k = Math.min(1, (n - t0) / (secs * 1000)); el.volume = from + (v - from) * k; if (k < 1) requestAnimationFrame(step); })(t0);
   };
 
-  async function start() {
-    if (stopped || muted || starting || !el.paused) return;
-    starting = true;
-    try {
-      if (ctx && ctx.state === "suspended") await ctx.resume();
-      const saved = parseFloat(store.get("pv_bgm_t")); if (saved > 0) el.currentTime = saved;   // continue where the previous page left off
-      await el.play(); fadeTo(BGM.volume, BGM.fadeIn);
-    } catch { /* autoplay blocked → wait for the first gesture */ }
-    starting = false;
+  // Must run synchronously inside the user's gesture. Never await ctx.resume(): without a real tap iOS leaves that
+  // promise pending forever, which used to wedge the whole start routine after a swipe-first visit.
+  function start() {
+    if (stopped || muted) return;
+    if (ctx && ctx.state !== "running") ctx.resume().catch(() => {});
+    if (!el.paused) return;
+    if (!el.currentTime) { const saved = parseFloat(store.get("pv_bgm_t")); if (saved > 0) el.currentTime = saved; }   // continue where the previous page left off
+    el.play().then(() => fadeTo(BGM.volume, BGM.fadeIn)).catch(() => { /* blocked (e.g. swipe is not a tap) → stay armed for the next gesture */ });
   }
   function stopForTrack() {
     if (stopped) return; stopped = true; store.set("pv_bgm_off", "1");
@@ -48,7 +47,9 @@ const BGM = { src: "assets/audio/phonkversebgm.mp3", volume: 0.2, fadeIn: 1.5, f
   const gestures = ["click", "touchend", "keydown"], onGesture = () => { if (!muted) start(); };
   const removeGesture = () => gestures.forEach((g) => document.removeEventListener(g, onGesture));
   gestures.forEach((g) => document.addEventListener(g, onGesture, { passive: true }));
-  el.addEventListener("playing", removeGesture);
+  // Stay armed until audio is genuinely playing AND the audio context is running (a swipe never counts as a tap on iOS).
+  const disarmIfRunning = () => { if (!el.paused && (!ctx || ctx.state === "running")) removeGesture(); };
+  el.addEventListener("playing", disarmIfRunning); ctx?.addEventListener("statechange", disarmIfRunning);
 
   // Visible on/off control (users must be able to silence audio that starts on its own).
   const toggle = document.createElement("button");
