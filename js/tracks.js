@@ -3,6 +3,8 @@ export const ALBUMS = {
  "phonkita": {
   "name": "PHONKITA",
   "slogan": "L’ITALIA NON È IN VENDITA",
+  "kicker": "ITALIAN PHONK MOVEMENT",
+  "flag": "flag-italy",
   "page": "phonkita.html",
   "art": "assets/images/phonkita-album-board.png",
   "palette": [
@@ -65,6 +67,8 @@ export const ALBUMS = {
  "phonkazo": {
   "name": "PHONKAZO",
   "slogan": "ESPAÑA NO SE VENDE",
+  "kicker": "SPANISH PHONK MOVEMENT",
+  "flag": "flag-spain",
   "page": "phonkazo.html",
   "art": "assets/images/phonkazo-album-board.png",
   "palette": [

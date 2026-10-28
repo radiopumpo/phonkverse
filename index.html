@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#07090c">
   <meta name="description" content="PHONKVERSE — more than music. A world. Discover the culture, creators and sounds connecting a new global phonk universe.">
   <title>PHONKVERSE — More Than Music. A World.</title>
-  <link rel="stylesheet" href="css/style.css?v=globe-8">
+  <link rel="stylesheet" href="css/style.css?v=globe-9">
 </head>
 <body class="home-page">
   <div class="powered-bar">
@@ -58,15 +58,6 @@
         </div>
         <div class="globe-hint" id="globe-hint"></div>
 
-        <article class="world-avatar world-avatar-italy" id="avatar-italy">
-          <span class="avatar-country">ITALY · EUROPE</span><h2>PHONK<span>ITA</span></h2>
-          <p>L’Italia non è in vendita.</p><a href="phonkita.html">Explore Phonkita <span>↗</span></a>
-        </article>
-        <article class="world-avatar world-avatar-spain" id="avatar-spain">
-          <span class="avatar-country">SPAIN · EUROPE</span><h2>PHONK<span>AZO</span></h2>
-          <p>España no se vende.</p><a href="phonkazo.html">Explore Phonkazo <span>↗</span></a>
-        </article>
-
         <div class="poi-card" id="poi-card" aria-live="polite">
           <button class="poi-close" id="poi-close" aria-label="Close location details">×</button>
           <span class="poi-kicker">PHONKVERSE PIN / <span id="poi-region">EUROPE</span></span>
@@ -76,27 +67,13 @@
       </div>
     </section>
 
-    <section id="albums" class="section albums-section">
+    <section id="albums" class="section voices-section" aria-labelledby="voices-title">
       <div class="section-intro albums-intro">
-        <p class="eyebrow"><span class="eyebrow-line"></span> THE FIRST ALBUMS</p>
-        <h2>Two voices.<br><span>One universe.</span></h2>
-        <p>Phonkita and Phonkazo are just the beginning. Discover their worlds, their stories and their sound.</p>
+        <p class="eyebrow"><span class="eyebrow-line"></span> THE VOICES</p>
+        <h2 id="voices-title">Many voices.<br><span>One universe.</span></h2>
+        <p>Phonkita and Phonkazo are the first. More scenes from around the world are on their way, each with its own sound, story and album.</p>
       </div>
-      <a class="album-card album-italy" href="phonkita.html">
-        <div class="album-card-bg"></div><div class="album-card-content"><span class="album-kicker">ITALIAN PHONK MOVEMENT</span><h3>PHONKITA</h3><p>L’ITALIA NON È IN VENDITA</p><span class="album-flag flag-italy"></span><span class="album-button">Explore album <b>↗</b></span></div>
-      </a>
-      <a class="album-card album-spain" href="phonkazo.html">
-        <div class="album-card-bg"></div><div class="album-card-content"><span class="album-kicker">SPANISH PHONK MOVEMENT</span><h3>PHONKAZO</h3><p>ESPAÑA NO SE VENDE</p><span class="album-flag flag-spain"></span><span class="album-button">Explore album <b>↗</b></span></div>
-      </a>
-    </section>
-
-    <section id="upcoming" class="section upcoming-section" aria-labelledby="upcoming-title">
-      <div class="section-intro">
-        <p class="eyebrow"><span class="eyebrow-line"></span> NEXT CHAPTERS</p>
-        <h2 id="upcoming-title">More voices.<br><span>Coming soon.</span></h2>
-        <p>The map keeps growing. New scenes are being added to the PHONKVERSE.</p>
-      </div>
-      <div class="soon-grid" id="upcoming-grid"></div>
+      <div class="voices-grid" id="voices-grid"></div>
     </section>
 
     <section id="ecosystem" class="section ecosystem-section">
@@ -128,7 +105,7 @@
   <footer class="site-footer"><a class="brand" href="index.html"><span class="brand-mark">♛</span><span>PHONKVERSE</span></a><p>Music / Culture / Community / Global</p><span class="footer-motto">DIFFERENT PLACES. SAME FREQUENCY.</span></footer>
   <script src="js/main.js"></script>
   <script type="module" src="js/globe/index.js"></script>
-  <script type="module" src="js/coming-soon.js"></script>
+  <script type="module" src="js/voices.js"></script>
   <script src="js/bgm.js"></script>
 </body>
 </html>

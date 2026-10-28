@@ -5,6 +5,7 @@ export const CONFIG = {
   radius: 1.6,
   spin: 0.075,          // rad/s idle rotation (≈ 84 s per revolution)
   idleResumeMs: 2200,   // auto-rotate resumes this long after the last interaction
+  cardHoldMs: 7000,     // with a POI card open: after this much inactivity the card closes and rotation resumes
   homePitch: 0.32,      // resting tilt (rad) so the northern hemisphere reads well
   homeLon: 8, homeLat: 40,
   zoom: { min: 3.6, max: 8, home: 6.4, scrollIn: 1.5 },

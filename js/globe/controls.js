@@ -7,7 +7,7 @@ import { facingAngles, wrapPI } from "./geo.js";
  * plus FOCUS (ease to a POI). Auto-rotate always comes back — the old code disabled it forever
  * after the first wheel/touch, which is why Chrome "froze".
  */
-export function createControls(el, globe, camera, { reducedMotion = false } = {}) {
+export function createControls(el, globe, camera, { reducedMotion = false, onRelease } = {}) {
   const s = { yaw: 0, pitch: CONFIG.homePitch, vyaw: 0, vpitch: 0, dragging: false, lastInput: -1e9,
     focus: null, paused: false, holdSpin: false, zoom: CONFIG.zoom.home, scrollZoom: 0 };
   const home = facingAngles(CONFIG.homeLat, CONFIG.homeLon); s.yaw = home.yaw;
@@ -48,7 +48,9 @@ export function createControls(el, globe, camera, { reducedMotion = false } = {}
     holdSpin(v) { s.holdSpin = v; },                          // true while a POI card is open
     focusOn(lat, lon) { const f = facingAngles(lat, lon); s.focus = { yaw: f.yaw, pitch: Math.min(f.pitch, .75) }; poke(); },
     reset() { const h = facingAngles(CONFIG.homeLat, CONFIG.homeLon); s.focus = { yaw: h.yaw, pitch: CONFIG.homePitch }; s.zoom = CONFIG.zoom.home; s.holdSpin = false; poke(); },
+    poke,
     update(dt) {
+      if (s.holdSpin && !s.dragging && now() - s.lastInput > CONFIG.cardHoldMs) { s.holdSpin = false; onRelease?.(); }   // user is done → close card, resume spin
       const idle = !s.dragging && now() - s.lastInput > CONFIG.idleResumeMs && !s.paused && !s.holdSpin && !s.focus;
       if (s.focus) {
         const a = 1 - Math.exp(-dt * 3.2);

@@ -43,14 +43,14 @@ A missing file shows a note with the expected path instead of failing silently.
 `config.js` content + tunables (POIs, signals, arcs, speed, zoom) · `geo.js` lat/lon maths · `earth.js` night-Earth shader, clouds, atmosphere · `network.js` signal nodes + animated arcs · `markers.js` clickable POIs as DOM buttons · `controls.js` drag, inertia, auto-rotate, focus-on-pin · `ui.js` POI card, HUD, buttons · `scroll.js` publishes scroll progress as CSS `--p` · `index.js` bootstrap.
 
 - **Add a POI:** add one object to `LOCATIONS` in `config.js`.
-- **Auto-rotate** always resumes ~2 s after the last interaction and pauses while a POI card is open. Plain mouse wheel scrolls the page; Ctrl/⌘+wheel, pinch on trackpads, or the +/− buttons zoom.
+- **Auto-rotate** always resumes ~2 s after the last interaction. With a POI card open it waits 7 s of inactivity (`cardHoldMs`), then closes the card and resumes. Plain mouse wheel scrolls the page; Ctrl/⌘+wheel, pinch on trackpads, or the +/− buttons zoom.
 - **Touch:** horizontal swipe rotates, vertical swipe scrolls the page.
 - **Reduced motion:** rotation slows to 30% (there is a pause button).
 - **Better textures:** replace the files in `assets/globe/` (e.g. an 8K night map) and update paths in `config.js`.
 - If WebGL is unavailable, a static image is shown instead.
 
-## Coming-soon chapters
-`js/upcoming.js` is the single list (Phonkami/Japan, Phonkada/Brazil, Phonké/France). Each entry renders a card in the home page's "More voices. Coming soon." section (`js/coming-soon.js`) and, if it has `lat`/`lon`, a dimmed "· SOON" pin on the globe (no link). To add a chapter: add one object. To launch it: move it into `LOCATIONS` (`js/globe/config.js`) and `js/tracks.js`, and add its album page.
+## Voices grid & coming-soon chapters
+`js/upcoming.js` is the single list (Phonkami/Japan, Phonkada/Brazil, Phonké/France). Each entry renders a dashed "COMING SOON" card in the home page's "Many voices. One universe." grid (`js/voices.js`, after the live album cards) and, if it has `lat`/`lon`, a dimmed "· SOON" pin on the globe (no link). To add a chapter: add one object. To launch it: move it into `LOCATIONS` (`js/globe/config.js`) and `js/tracks.js`, and add its album page.
 
 ## Song page (`js/song/`)
 `index.js` page logic (reads `js/tracks.js`, URL params, share, Media Session) · `audio.js` playback + audio analyser · `visual.js` synthwave canvas scene. Share uses the native share sheet where available, otherwise copies the link. Link previews are generic (static hosting cannot vary meta tags per song).

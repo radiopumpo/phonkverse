@@ -11,7 +11,7 @@ const section = document.querySelector(".world-scroll"), sticky = document.query
 const stage = document.getElementById("globe-stage"), canvas = document.getElementById("phonkverse-globe");
 
 function boot() {
-  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true, powerPreference: "high-performance" });
+  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true, premultipliedAlpha: true, powerPreference: "high-performance" });
   renderer.setClearColor(0x000000, 0);
   const scene = new THREE.Scene(), camera = new THREE.PerspectiveCamera(35, 1, .1, 50);
   camera.position.z = CONFIG.zoom.home;
@@ -20,11 +20,11 @@ function boot() {
   earth.group.add(network.group); scene.add(earth.group, earth.atmosphere);
 
   const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const controls = createControls(canvas, earth.group, camera, { reducedMotion: reduced });
+  const controls = createControls(canvas, earth.group, camera, { reducedMotion: reduced, onRelease: () => { active = null; markers.setActive(null); ui.hide(); } });
   let active = null;
   const select = (loc) => { active = loc.id; markers.setActive(loc.id); ui.show(loc); controls.focusOn(loc.lat, loc.lon); controls.holdSpin(true); };
   const ui = createUI({ onZoom: controls.zoomBy, onReset: () => { active = null; markers.setActive(null); controls.reset(); },
-    onTogglePause: controls.setPaused, onClose: () => { active = null; markers.setActive(null); controls.holdSpin(false); } });
+    onTogglePause: controls.setPaused, onActivity: controls.poke, onClose: () => { active = null; markers.setActive(null); controls.holdSpin(false); } });
   const markers = createMarkers(stage.querySelector(".globe-markers"), earth.group, camera, select);
   bindScrollProgress(section, sticky, controls.setScroll);
 

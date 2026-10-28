@@ -2,7 +2,7 @@ import { CONFIG } from "./config.js";
 const $ = (id) => document.getElementById(id);
 
 /** All DOM wiring for the globe widget (POI card, HUD, buttons). No three.js in here. */
-export function createUI({ onZoom, onReset, onTogglePause, onClose }) {
+export function createUI({ onZoom, onReset, onTogglePause, onClose, onActivity }) {
   const card = $("poi-card"), hint = $("globe-hint"), coords = $("globe-coordinates"), pause = $("globe-pause");
   const HINT = "DRAG TO ROTATE · TAP A PIN";
   $("globe-zoom-in").addEventListener("click", () => onZoom(-.5));
@@ -19,5 +19,6 @@ export function createUI({ onZoom, onReset, onTogglePause, onClose }) {
   }
   function hide() { card.classList.remove("is-open"); hint.textContent = HINT; }
   hint.textContent = HINT;
+  ["pointermove", "pointerdown", "focusin"].forEach((ev) => card.addEventListener(ev, () => onActivity?.()));   // reading the card counts as activity
   return { show, hide, setCenter(lat, lon) { coords.textContent = `${Math.abs(lat).toFixed(1)}°${lat >= 0 ? "N" : "S"} ${Math.abs(lon).toFixed(1)}°${lon >= 0 ? "E" : "W"}`; } };
 }
