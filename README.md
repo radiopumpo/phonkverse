@@ -20,6 +20,8 @@ assets/
 css/style.css                    site-wide styles (+ world stage, BGM toggle, "Powered by")
 css/song.css                     song page only
 js/main.js                       mobile menu
+js/pwa.js                        registers sw.js
+sw.js · manifest.webmanifest     PWA (root level)
 js/player.js                     inline ▶ player on album pages
 js/bgm.js                        background music (see below)
 js/tracks.js                     song data used by song.html
@@ -64,6 +66,13 @@ A missing file shows a note with the expected path instead of failing silently.
 
 ## "Powered by" badge
 Slim strip above the header on every page, linking to radiopumpo.github.io. Markup is in each HTML file (`.powered-bar`); logo at `assets/images/radiopumpo-logo.jpg`.
+
+## Install as an app (PWA)
+`manifest.webmanifest` (name, colours, icons) + `sw.js` (offline cache) + `js/pwa.js` (registers it) + icons in `assets/icons/` and `favicon.ico`. Needs https (GitHub Pages is) or localhost.
+- Android/desktop Chrome/Edge: the browser offers "Install". iPhone: Share → Add to Home Screen.
+- **Bump `VERSION` in `sw.js` on every deploy** that changes precached files, otherwise installed copies keep older files until the cache name changes. HTML/CSS/JS are network-first, so online users normally get fresh code anyway.
+- Audio (.mp3) is never cached by the service worker (Safari range requests, file size). Everything else works offline; tracks and BGM need a connection.
+- If you add files that should work offline, add them to the `SHELL` list in `sw.js`.
 
 ## Deploy to GitHub Pages
 1. Upload the folder contents to the repo root.
