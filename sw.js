@@ -4,7 +4,7 @@
    - Images, textures, fonts, icons: cache-first.
    - Audio (.mp3) and Range requests are NOT intercepted: Safari needs real range responses, and tracks are large.
    Bump VERSION on every deploy that changes precached files. */
-const VERSION = "2026-10-29-1";
+const VERSION = "2026-11-02-1";
 const CACHE = `phonkverse-${VERSION}`;
 const SHELL = [
   "./", "index.html", "phonkita.html", "phonkazo.html", "phonkami.html", "song.html", "manifest.webmanifest",

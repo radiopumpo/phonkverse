@@ -1,9 +1,12 @@
-/** <audio> + optional Web Audio analyser (energy 0..1). iOS rule: the AudioContext must be created/resumed inside a tap. */
+/** <audio> + optional Web Audio analyser (energy 0..1).
+ *  Phones/tablets (coarse pointer) play the <audio> element directly with NO Web Audio routing: iOS suspends AudioContext output
+ *  when the app goes to the background, while plain media elements keep playing. Desktop keeps the analyser for reactive visuals. */
 export function createAudio({ onTime, onEnd, onError, onState }) {
   const el = new Audio(); el.preload = "metadata"; el.crossOrigin = "anonymous";
   let ctx = null, an = null, buf = null, tapped = false;
   const wire = () => {
     if (tapped) return; tapped = true;
+    if (matchMedia("(pointer: coarse)").matches) return;          // background-safe path: direct element playback
     try {
       const AC = window.AudioContext || window.webkitAudioContext; ctx = new AC();
       const src = ctx.createMediaElementSource(el); an = ctx.createAnalyser(); an.fftSize = 256; an.smoothingTimeConstant = .8;

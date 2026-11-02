@@ -39,7 +39,7 @@ const BGM = { src: "assets/audio/phonkversebgm.mp3", volume: 0.2, fadeIn: 1.5, f
   }
   function stopForTrack() {
     if (stopped) return; stopped = true; store.set("pv_bgm_off", "1");
-    removeGesture(); fadeTo(0, BGM.fadeOut); setTimeout(() => el.pause(), BGM.fadeOut * 1000 + 50); toggle.hidden = true;
+    removeGesture(); fadeTo(0, BGM.fadeOut); setTimeout(() => { el.pause(); ctx?.close().catch(() => {}); }, BGM.fadeOut * 1000 + 50);   // release the audio session so track playback owns it toggle.hidden = true;
   }
   window.addEventListener("phonkverse:track-play", stopForTrack);   // fired by js/player.js and js/song/audio.js
 
@@ -75,6 +75,9 @@ const BGM = { src: "assets/audio/phonkversebgm.mp3", volume: 0.2, fadeIn: 1.5, f
   const save = () => store.set("pv_bgm_t", String(el.currentTime || 0));
   el.addEventListener("timeupdate", () => { if (Math.floor(el.currentTime) % 2 === 0) save(); });
   window.addEventListener("pagehide", save);
+
+  // iOS suspends the audio context while the app is in the background; wake it when the user comes back.
+  document.addEventListener("visibilitychange", () => { if (!document.hidden && ctx && ctx.state !== "running" && !stopped && !muted && !el.paused) ctx.resume().catch(() => {}); });
 
   // Try immediately (works if the browser already allows autoplay for this site).
   if (!ctx || ctx.state === "running") start();
