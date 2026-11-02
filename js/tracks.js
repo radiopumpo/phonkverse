@@ -163,5 +163,77 @@ export const ALBUMS = {
     "src": "assets/songs/phonkami/03-shuden.mp3"
    }
   ]
+ },
+ "phonkssons": {
+  "name": "PHONKSSONS",
+  "slogan": "TURN IT UP. LAUGH IT OFF.",
+  "kicker": "SWEDISH PHONK MOVEMENT",
+  "flag": "flag-sweden",
+  "page": "phonkssons.html",
+  "art": "assets/images/phonkssons-album-board.jpg",
+  "palette": [
+   "#ffcf3a",
+   "#2d7ff9",
+   "#fff3c4"
+  ],
+  "tracks": [
+   {
+    "n": "01",
+    "title": "Sånt är livet!",
+    "mood": "“That’s Life!”",
+    "desc": "Work, rent, bills, expectations — same old circus, different day. PHONKSSONS turn the everyday frustrations of modern Swedish life into a sarcastic, bass-heavy anthem. Because sometimes all you can do is laugh, turn it up, and say: Sånt är livet!",
+    "src": "assets/songs/phonkssons/01-sant-ar-livet.mp3"
+   },
+   {
+    "n": "02",
+    "title": "Lagom? Aldrig!",
+    "mood": "“Moderate? Never!”",
+    "desc": "Sweden has a word for keeping everything balanced: lagom. But what if you were never meant to fit the mould? A rebellious celebration of individuality, freedom and refusing to live by somebody else’s expectations. A little too loud, a little too wild — exactly how they like it.",
+    "src": "assets/songs/phonkssons/02-lagom-aldrig.mp3"
+   },
+   {
+    "n": "03",
+    "title": "Samma frekvens",
+    "mood": "“Same Frequency”",
+    "desc": "Different lives, different struggles, different faces in the crowd — yet somehow, we can still feel the same thing. PHONKSSONS explore loneliness, connection and the invisible bond created by music. You don’t have to be alike to share a frequency.",
+    "src": "assets/songs/phonkssons/03-samma-frekvens.mp3"
+   }
+  ]
+ },
+ "phonkov": {
+  "name": "PHONKOV",
+  "slogan": "DIFFERENT ROOTS. ONE FUTURE.",
+  "kicker": "RUSSIAN PHONK MOVEMENT",
+  "flag": "flag-russia",
+  "page": "phonkov.html",
+  "art": "assets/images/phonkov-album-board.jpg",
+  "palette": [
+   "#e63946",
+   "#8d0f1f",
+   "#f1f5f9"
+  ],
+  "tracks": [
+   {
+    "n": "01",
+    "title": "Такая жизнь",
+    "mood": "Takaya Zhizn — That’s Life",
+    "desc": "From Moscow’s restless streets to the frozen edges of Siberia, everyday Russian life is full of contradictions. Old habits meet a digital generation, history meets modern chaos, and somehow people keep moving. PHONKOV delivers a sharp, darkly humorous portrait of a country too complex to fit into a headline.",
+    "src": "assets/songs/phonkov/01-takaya-zhizn.mp3"
+   },
+   {
+    "n": "02",
+    "title": "Не по приказу",
+    "mood": "Ne po Prikazu — Not by Orders",
+    "desc": "A powerful statement about patriotism, choice and the human cost of conflict. Leaders may count battalions, but ordinary people count the loved ones waiting at home. PHONKOV questions the idea that loyalty means blindly following orders — because loving your country doesn’t mean treating its people as expendable.",
+    "src": "assets/songs/phonkov/02-ne-po-prikazu.mp3"
+   },
+   {
+    "n": "03",
+    "title": "Разные корни",
+    "mood": "Raznye Korni — Different Roots",
+    "desc": "Russia is more than one city, one culture or one identity. From Dagestan and the Caucasus to Tatarstan, Siberia and beyond, countless traditions and communities share the same vast land. A celebration of cultural diversity, strength and brotherhood — different roots, one shared future.",
+    "src": "assets/songs/phonkov/03-raznye-korni.mp3"
+   }
+  ]
  }
 };

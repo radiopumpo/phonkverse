@@ -265,3 +265,11 @@ html { scroll-behavior: smooth; }
 .japan-theme .album-hero-art { background-image: url('../assets/images/phonkami-album-board.jpg'); }
 .flag-japan { background: radial-gradient(circle at 50% 50%, #bc002d 0 32%, #fff 34%); }
 .tone-pink { --c: #ff4d6d; }
+
+/* ===== Phonkssons (Sweden) & Phonkov (Russia) ===== */
+.sweden-theme { --accent: #ffcf3a; } .russia-theme { --accent: #e63946; }
+.sweden-theme .album-hero-art { background-image: url('../assets/images/phonkssons-album-board.jpg'); }
+.russia-theme .album-hero-art { background-image: url('../assets/images/phonkov-album-board.jpg'); }
+.flag-sweden { background: linear-gradient(90deg, transparent 30%, #ffcf3a 30% 44%, transparent 44%), linear-gradient(180deg, transparent 40%, #ffcf3a 40% 60%, transparent 60%), #1f5fbf; }
+.flag-russia { background: linear-gradient(180deg, #fff 0 33%, #1f5fbf 33% 66%, #d52b1e 66%); }
+.tone-gold { --c: #ffcf3a; } .tone-crimson { --c: #e63946; }

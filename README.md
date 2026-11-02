@@ -8,6 +8,7 @@ Mobile-friendly static site, no build step. Serve over **http(s)** (VS Code Live
 | `index.html` | Home: scroll-driven hero with the live WebGL globe, ecosystem pillars, album cards, community banner |
 | `phonkita.html` / `phonkazo.html` | Album pages with tracklists (▶ plays inline, title opens the song page) |
 | `phonkami.html` | Phonkami (Japan) album page, 3 tracks |
+| `phonkssons.html` / `phonkov.html` | Phonkssons (Sweden) and Phonkov (Russia) album pages, 3 tracks each |
 | `song.html` | One shared song page: `song.html?a=phonkita&t=03` — synthwave animation, timeline, prev/next, share |
 
 ## Folder map
@@ -36,6 +37,8 @@ Tracks are MP3, named `NN-slug.mp3` — two digits, lowercase, hyphens, no space
 
 Expected files:
 - `assets/songs/phonkita/`: `01-ultimo-treno`, `02-affitto-killer`, `03-nord-sud`, `04-bella-figura`, `05-piazza-senza-padroni`, `06-sotto-la-pelle`, `07-dallitalia-alla-spagna`
+- `assets/songs/phonkssons/`: `01-sant-ar-livet`, `02-lagom-aldrig`, `03-samma-frekvens`
+- `assets/songs/phonkov/`: `01-takaya-zhizn`, `02-ne-po-prikazu`, `03-raznye-korni`
 - `assets/songs/phonkami/`: `01-kage`, `02-akai-tsuki`, `03-shuden`
 - `assets/songs/phonkazo/`: `01-phonkazo-chollazo`, `02-manual-del-pelotazo`, `03-ni-de-tu-bando`, `04-curriculum-de-fantasma`, `05-la-penultima-terraza`, `06-nadie-nos-regalo-nada`, `07-de-espana-al-mundo`
 
@@ -82,7 +85,7 @@ Slim strip above the header on every page, linking to radiopumpo.github.io. Mark
 3. After changing CSS/JS, hard-refresh (or bump the `?v=` query on the stylesheet links) — Safari caches aggressively.
 
 ## Known notes / next steps
-- `assets/images/phonkami-album-board.jpg` is a generated **placeholder** (and the slogan "THE UNDERGROUND NEVER SLEEPS" is placeholder copy); replace the file/text with final artwork.
+- `assets/images/phonkami-album-board.jpg`, `phonkssons-album-board.jpg` and `phonkov-album-board.jpg` are generated **placeholders** (and the slogans on those pages are placeholder copy); replace the file/text with final artwork.
 - The hero characters are masked crops of one baked artwork (`home-hero-reference.webp`); separated character layers and a real brush-style wordmark SVG would improve fidelity.
 - `css/style.css` still contains some older hero/globe rules that are no longer used; safe to prune later.
 - Community/account features are presentation-only and would need a backend.
