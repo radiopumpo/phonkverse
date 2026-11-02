@@ -127,5 +127,41 @@ export const ALBUMS = {
     "src": "assets/songs/phonkazo/07-de-espana-al-mundo.mp3"
    }
   ]
+ },
+ "phonkami": {
+  "name": "PHONKAMI",
+  "slogan": "THE UNDERGROUND NEVER SLEEPS",
+  "kicker": "JAPANESE PHONK MOVEMENT",
+  "flag": "flag-japan",
+  "page": "phonkami.html",
+  "art": "assets/images/phonkami-album-board.jpg",
+  "palette": [
+   "#ff4d6d",
+   "#c1121f",
+   "#ffe3e8"
+  ],
+  "tracks": [
+   {
+    "n": "01",
+    "title": "Kage (影)",
+    "mood": "“Shadow”",
+    "desc": "Japan's old discipline meets the pressure of modern life. Between the salaryman's routine and the samurai's legacy, Phonkami gives the underground a voice that refuses to be silenced.",
+    "src": "assets/songs/phonkami/01-kage.mp3"
+   },
+   {
+    "n": "02",
+    "title": "Akai Tsuki (赤い月)",
+    "mood": "“Red Moon”",
+    "desc": "Under a blood-red moon, Phonkami emerges from the darkness. Hypnotic, fierce and untouchable, she transforms the night into her own kingdom.",
+    "src": "assets/songs/phonkami/02-akai-tsuki.mp3"
+   },
+   {
+    "n": "03",
+    "title": "Shūden (終電)",
+    "mood": "“The Last Train”",
+    "desc": "On the last train through Tokyo, exhausted dreamers carry hopes they can't afford to abandon. A melancholic journey through loneliness, youth and the music that makes tomorrow feel possible.",
+    "src": "assets/songs/phonkami/03-shuden.mp3"
+   }
+  ]
  }
 };

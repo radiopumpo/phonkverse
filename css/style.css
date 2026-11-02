@@ -259,3 +259,9 @@ html { scroll-behavior: smooth; }
 .soon-badge { position: absolute; top: 16px; right: 16px; padding: 3px 8px; border: 1px solid var(--c); border-radius: 3px; color: var(--c); font-size: .55rem; letter-spacing: .16em; }
 @media (max-width: 900px) { .voices-section { grid-template-columns: 1fr; } .voices-section .albums-intro { max-width: 600px; } }
 @media (max-width: 640px) { .voices-grid { grid-template-columns: 1fr; } .voices-grid .album-card, .voices-grid .soon-card { min-height: 250px; } }
+
+/* ===== Phonkami (Japan) ===== */
+.japan-theme { --accent: #ff4d6d; }
+.japan-theme .album-hero-art { background-image: url('../assets/images/phonkami-album-board.jpg'); }
+.flag-japan { background: radial-gradient(circle at 50% 50%, #bc002d 0 32%, #fff 34%); }
+.tone-pink { --c: #ff4d6d; }

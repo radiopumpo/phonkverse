@@ -28,6 +28,9 @@ const BASE_LOCATIONS = [
   { id: "verse", name: "THE WIDER VERSE", region: "GLOBAL · OPEN MAP", lat: 18, lon: -64, tone: "lime",
     description: "PHONKVERSE is an open cultural map. Future pins can represent local scenes, creators, events and crews.",
     href: "#ecosystem", cta: "Explore the ecosystem ↗" },
+  { id: "phonkami", name: "PHONKAMI", region: "JAPAN · ASIA", lat: 36.2, lon: 138.3, tone: "pink",
+    description: "The Japanese phonk movement: shadow, red moon and the last train through Tokyo.",
+    href: "phonkami.html", cta: "Discover Phonkami ↗" },
 ];
 
 export const LOCATIONS = [
