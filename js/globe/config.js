@@ -37,6 +37,15 @@ const BASE_LOCATIONS = [
   { id: "phonkssons", name: "PHONKSSONS", region: "SWEDEN · EUROPE", lat: 60.0, lon: 15.0, tone: "gold",
     description: "The Swedish phonk movement: sarcastic, bass-heavy anthems about modern life, rebellion and a shared frequency.",
     href: "phonkssons.html", cta: "Discover Phonkssons ↗" },
+  { id: "phonke", name: "PHONKÉ", region: "FRANCE · EUROPE", lat: 47.0, lon: 2.5, tone: "blue",
+    description: "The French phonk movement: French identity, unity and generational energy beyond the postcard.",
+    href: "phonke.html", cta: "Discover Phonké ↗" },
+  { id: "phonkdon", name: "PHONKDON", region: "ENGLAND · EUROPE", lat: 52.5, lon: -1.5, tone: "violet",
+    description: "The English phonk movement: underground ambition, freedom and nightlife, from grime and drum & bass to garage.",
+    href: "phonkdon.html", cta: "Discover Phonkdon ↗" },
+  { id: "phonkhan", name: "PHONKHAN", region: "INDIA · PAKISTAN · ASIA", lat: 28.0, lon: 74.0, tone: "saffron",
+    description: "The South Asian phonk movement: shared roots, distinct identities and unity without uniformity across India and Pakistan.",
+    href: "phonkhan.html", cta: "Discover Phonkhan ↗" },
 ];
 
 export const LOCATIONS = [
@@ -53,6 +62,6 @@ export const SIGNALS = [
 // Pairs of ids (LOCATIONS) or [lat,lon] that get an animated arc.
 export const LINKS = [
   ["italy","spain"],["spain","verse"],["italy",[6.5,3.4]],["italy",[25.2,55.3]],["spain",[-23.5,-46.6]],
-  ["spain","phonkada"],["italy","phonkami"],["italy","phonkssons"],["phonkssons","phonkov"],["phonkov","phonkami"],
+  ["spain","phonkada"],["italy","phonkami"],["italy","phonke"],["phonke","phonkdon"],["phonkdon","phonkssons"],["phonkov","phonkhan"],["phonkhan","phonkami"],["phonkhan","phonkada"],["italy","phonkssons"],["phonkssons","phonkov"],["phonkov","phonkami"],
   ["verse",[40.7,-74]],["italy",[52.5,13.4]],["spain",[51.5,-0.1]],["italy",[35.7,139.7]],["verse",[34,-118.2]],
 ];

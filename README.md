@@ -9,6 +9,7 @@ Mobile-friendly static site, no build step. Serve over **http(s)** (VS Code Live
 | `phonkita.html` / `phonkazo.html` | Album pages with tracklists (▶ plays inline, title opens the song page) |
 | `phonkami.html` | Phonkami (Japan) album page, 3 tracks |
 | `phonkssons.html` / `phonkov.html` | Phonkssons (Sweden) and Phonkov (Russia) album pages, 3 tracks each |
+| `phonke.html` / `phonkdon.html` / `phonkhan.html` | Phonké (France, 3 tracks), Phonkdon (England, 5 tracks), Phonkhan (India & Pakistan, 3 tracks) |
 | `song.html` | One shared song page: `song.html?a=phonkita&t=03` — synthwave animation, timeline, prev/next, share |
 
 ## Folder map
@@ -37,6 +38,9 @@ Tracks are MP3, named `NN-slug.mp3` — two digits, lowercase, hyphens, no space
 
 Expected files:
 - `assets/songs/phonkita/`: `01-ultimo-treno`, `02-affitto-killer`, `03-nord-sud`, `04-bella-figura`, `05-piazza-senza-padroni`, `06-sotto-la-pelle`, `07-dallitalia-alla-spagna`
+- `assets/songs/phonke/`: `01-pas-votre-carte-postale`, `02-on-fait-du-bruit`, `03-a-nos-accents`
+- `assets/songs/phonkdon/`: `01-made-in-england`, `02-no-invite-needed`, `03-all-night-no-borders`, `04-under-pressure`, `05-proper-good-night`
+- `assets/songs/phonkhan/`: `01-ek-hi-dhadkan`, `02-apna-india`, `03-apna-pakistan`
 - `assets/songs/phonkssons/`: `01-sant-ar-livet`, `02-lagom-aldrig`, `03-samma-frekvens`
 - `assets/songs/phonkov/`: `01-takaya-zhizn`, `02-ne-po-prikazu`, `03-raznye-korni`
 - `assets/songs/phonkami/`: `01-kage`, `02-akai-tsuki`, `03-shuden`
@@ -57,7 +61,7 @@ A missing file shows a note with the expected path instead of failing silently.
 - If WebGL is unavailable, a static image is shown instead.
 
 ## Voices grid & coming-soon chapters
-`js/upcoming.js` is the single list (Phonkada/Brazil, Phonké/France). Each entry renders a dashed "COMING SOON" card in the home page's "Many voices. One universe." grid (`js/voices.js`, after the live album cards) and, if it has `lat`/`lon`, a dimmed "· SOON" pin on the globe (no link). To add a chapter: add one object. To launch it: move it into `LOCATIONS` (`js/globe/config.js`) and `js/tracks.js`, and add its album page.
+`js/upcoming.js` is the single list (Phonkada/Brazil). Each entry renders a dashed "COMING SOON" card in the home page's "Many voices. One universe." grid (`js/voices.js`, after the live album cards) and, if it has `lat`/`lon`, a dimmed "· SOON" pin on the globe (no link). To add a chapter: add one object. To launch it: move it into `LOCATIONS` (`js/globe/config.js`) and `js/tracks.js`, and add its album page.
 
 ## Song page (`js/song/`)
 `index.js` page logic (reads `js/tracks.js`, URL params, share, Media Session) · `audio.js` playback + audio analyser · `visual.js` synthwave canvas scene. Share uses the native share sheet where available, otherwise copies the link. Link previews are generic (static hosting cannot vary meta tags per song).
@@ -85,7 +89,7 @@ Slim strip above the header on every page, linking to radiopumpo.github.io. Mark
 3. After changing CSS/JS, hard-refresh (or bump the `?v=` query on the stylesheet links) — Safari caches aggressively.
 
 ## Known notes / next steps
-- `assets/images/phonkami-album-board.jpg`, `phonkssons-album-board.jpg` and `phonkov-album-board.jpg` are generated **placeholders** (and the slogans on those pages are placeholder copy); replace the file/text with final artwork.
+- `assets/images/phonkami-album-board.jpg`, `phonkssons-`, `phonkov-`, `phonke-`, `phonkdon-` and `phonkhan-album-board.jpg` are generated **placeholders** (and the slogans on those pages are placeholder copy); replace the file/text with final artwork.
 - The hero characters are masked crops of one baked artwork (`home-hero-reference.webp`); separated character layers and a real brush-style wordmark SVG would improve fidelity.
 - `css/style.css` still contains some older hero/globe rules that are no longer used; safe to prune later.
 - Community/account features are presentation-only and would need a backend.

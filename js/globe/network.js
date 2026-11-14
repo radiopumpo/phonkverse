@@ -9,7 +9,7 @@ function glowTexture() {
   g.fillStyle = grd; g.fillRect(0, 0, 64, 64);
   const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
 }
-const TONES = { green: 0x4ce0b1, red: 0xff6a4d, lime: 0xcaff3b, amber: 0xffa23a, soon: 0xb9a3ff, pink: 0xff4d6d, gold: 0xffcf3a, crimson: 0xe63946 };
+const TONES = { green: 0x4ce0b1, red: 0xff6a4d, lime: 0xcaff3b, amber: 0xffa23a, soon: 0xb9a3ff, pink: 0xff4d6d, gold: 0xffcf3a, crimson: 0xe63946, blue: 0x4d8dff, violet: 0xb44dff, saffron: 0xff8f1f };
 
 /** Glowing signal nodes + animated arcs with travelling light pulses (the "living" network). */
 export function createNetwork() {

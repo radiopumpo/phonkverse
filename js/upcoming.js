@@ -3,5 +3,4 @@
 // LOCATIONS in js/globe/config.js, js/tracks.js and give it its own album page.
 export const UPCOMING = [
   { id: "phonkada", name: "PHONKADA", country: "Brazil", lat: -14.2, lon: -51.9, accent: "#f4d03f", blurb: "The Brazilian chapter of the PHONKVERSE is on its way." },
-  { id: "phonke",   name: "PHONKÉ",   country: "France", lat: 47, lon: 2.5, accent: "#b9a3ff", blurb: "A new voice is on its way. Stay tuned." },
 ];

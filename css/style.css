@@ -273,3 +273,13 @@ html { scroll-behavior: smooth; }
 .flag-sweden { background: linear-gradient(90deg, transparent 30%, #ffcf3a 30% 44%, transparent 44%), linear-gradient(180deg, transparent 40%, #ffcf3a 40% 60%, transparent 60%), #1f5fbf; }
 .flag-russia { background: linear-gradient(180deg, #fff 0 33%, #1f5fbf 33% 66%, #d52b1e 66%); }
 .tone-gold { --c: #ffcf3a; } .tone-crimson { --c: #e63946; }
+
+/* ===== Phonké (France), Phonkdon (England), Phonkhan (India & Pakistan) ===== */
+.france-theme { --accent: #4d8dff; } .england-theme { --accent: #b44dff; } .indpak-theme { --accent: #ff8f1f; }
+.france-theme .album-hero-art { background-image: url('../assets/images/phonke-album-board.jpg'); }
+.england-theme .album-hero-art { background-image: url('../assets/images/phonkdon-album-board.jpg'); }
+.indpak-theme .album-hero-art { background-image: url('../assets/images/phonkhan-album-board.jpg'); }
+.flag-france { background: linear-gradient(90deg, #1f4fd8 0 33%, #fff 33% 66%, #e63946 66%); }
+.flag-england { background: linear-gradient(90deg, transparent 42%, #d52b1e 42% 58%, transparent 58%), linear-gradient(180deg, transparent 42%, #d52b1e 42% 58%, transparent 58%), #fff; }
+.flag-indpak { background: linear-gradient(90deg, transparent 50%, #0b6b3a 50%), linear-gradient(180deg, #ff9933 0 33%, #fff 33% 66%, #138808 66%); }
+.tone-blue { --c: #4d8dff; } .tone-violet { --c: #b44dff; } .tone-saffron { --c: #ff8f1f; }

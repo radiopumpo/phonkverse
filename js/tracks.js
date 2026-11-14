@@ -235,5 +235,127 @@ export const ALBUMS = {
     "src": "assets/songs/phonkov/03-raznye-korni.mp3"
    }
   ]
+ },
+ "phonke": {
+  "name": "PHONKÉ",
+  "slogan": "WE BELONG, EVEN WHEN WE’RE DIFFERENT.",
+  "kicker": "FRENCH PHONK MOVEMENT",
+  "flag": "flag-france",
+  "page": "phonke.html",
+  "art": "assets/images/phonke-album-board.jpg",
+  "palette": [
+   "#4d8dff",
+   "#e63946",
+   "#f4f6ff"
+  ],
+  "tracks": [
+   {
+    "n": "01",
+    "title": "Pas votre carte postale",
+    "mood": "“Not your postcard”",
+    "desc": "France is more than its tourist images. From city streets to small towns, different backgrounds and generations share everyday struggles, ambition, humour and dreams. A celebration of the real France and the people shaping its future.",
+    "src": "assets/songs/phonke/01-pas-votre-carte-postale.mp3"
+   },
+   {
+    "n": "02",
+    "title": "On fait du bruit",
+    "mood": "“We make noise”",
+    "desc": "A generation refusing to be ignored. Challenging expectations, breaking conventions and making its own opportunities through music, creativity and self-expression. If making your voice heard is considered making noise, turn it up.",
+    "src": "assets/songs/phonke/02-on-fait-du-bruit.mp3"
+   },
+   {
+    "n": "03",
+    "title": "À nos accents",
+    "mood": "“To our accents”",
+    "desc": "Different accents, origins, languages and family histories, all part of contemporary France. A tribute to the freedom to belong without having to look, sound or live like everyone else.",
+    "src": "assets/songs/phonke/03-a-nos-accents.mp3"
+   }
+  ]
+ },
+ "phonkdon": {
+  "name": "PHONKDON",
+  "slogan": "WE CREATE OUR OWN STAGE.",
+  "kicker": "ENGLISH PHONK MOVEMENT",
+  "flag": "flag-england",
+  "page": "phonkdon.html",
+  "art": "assets/images/phonkdon-album-board.jpg",
+  "palette": [
+   "#b44dff",
+   "#ff3b6b",
+   "#e9ddff"
+  ],
+  "tracks": [
+   {
+    "n": "01",
+    "title": "Made in England",
+    "mood": "“Identity”",
+    "desc": "What does being made in England really mean? Beyond flags, stereotypes and nostalgia lies a country of different backgrounds, ambitions and contradictions. A new generation proud of where it comes from, but determined to shape what comes next.",
+    "src": "assets/songs/phonkdon/01-made-in-england.mp3"
+   },
+   {
+    "n": "02",
+    "title": "No invite needed",
+    "mood": "“Grime / pirate radio”",
+    "desc": "Nobody gave the underground a seat at the table, so it built its own stage. A lyrical celebration of grime, pirate radio, independent voices, sharp wordplay and the confidence to create without permission.",
+    "src": "assets/songs/phonkdon/02-no-invite-needed.mp3"
+   },
+   {
+    "n": "03",
+    "title": "All night, no borders",
+    "mood": "“Jungle / drum & bass”",
+    "desc": "When the bass drops, backgrounds become secondary. A high-energy jungle and drum & bass journey about freedom, connection and strangers sharing the same dancefloor.",
+    "src": "assets/songs/phonkdon/03-all-night-no-borders.mp3"
+   },
+   {
+    "n": "04",
+    "title": "Under pressure",
+    "mood": "“Sparse vocals / heavy bass”",
+    "desc": "The weight of modern life: rising costs, uncertain futures, social expectations and the feeling of constantly having to keep up. Sparse vocals, heavy bass and an atmosphere that lets the music speak.",
+    "src": "assets/songs/phonkdon/04-under-pressure.mp3"
+   },
+   {
+    "n": "05",
+    "title": "Proper good night",
+    "mood": "“UK garage / nightlife”",
+    "desc": "A playful celebration of English nightlife, garage culture, friendships, flirting and unforgettable nights. Sometimes the best way to escape life’s complications is simply to enjoy being alive together.",
+    "src": "assets/songs/phonkdon/05-proper-good-night.mp3"
+   }
+  ]
+ },
+ "phonkhan": {
+  "name": "PHONKHAN",
+  "slogan": "DIFFERENT IDENTITIES. SHARED ROOTS.",
+  "kicker": "SOUTH ASIAN PHONK MOVEMENT",
+  "flag": "flag-indpak",
+  "page": "phonkhan.html",
+  "art": "assets/images/phonkhan-album-board.jpg",
+  "palette": [
+   "#ff8f1f",
+   "#0e9f6e",
+   "#fff1dc"
+  ],
+  "tracks": [
+   {
+    "n": "01",
+    "title": "Ek hi dhadkan — ایک ہی دھڑکن",
+    "mood": "“One heartbeat”",
+    "desc": "Two countries, two flags, countless stories, but also shared languages, music, food, humour and family traditions. A celebration of common ground without pretending history and differences don’t exist. Different identities, one heartbeat.",
+    "src": "assets/songs/phonkhan/01-ek-hi-dhadkan.mp3"
+   },
+   {
+    "n": "02",
+    "title": "Apna India — अपना इंडिया",
+    "mood": "“Our India”",
+    "desc": "India’s enormous diversity, from its languages and regional cultures to its streets, traditions and ambitions. A portrait of a country balancing ancient heritage with a generation determined to build its own future.",
+    "src": "assets/songs/phonkhan/02-apna-india.mp3"
+   },
+   {
+    "n": "03",
+    "title": "Apna Pakistan — اپنا پاکستان",
+    "mood": "“Our Pakistan”",
+    "desc": "A celebration of Pakistan through its regional identities, poetry, music, humour, traditions and resilient people. Beyond headlines and stereotypes, a young generation with its own ambitions, creativity and story to tell.",
+    "src": "assets/songs/phonkhan/03-apna-pakistan.mp3"
+   }
+  ]
  }
 };
