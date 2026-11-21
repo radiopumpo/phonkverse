@@ -14,7 +14,8 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="PHONKVERSE">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <link rel="stylesheet" href="css/style.css?v=globe-13">
+  <link rel="stylesheet" href="css/style.css?v=globe-14">
+  <link rel="stylesheet" href="css/player.css?v=2">
   <link rel="stylesheet" href="css/song.css?v=2">
 </head>
 <body class="song-page">
@@ -51,12 +52,17 @@
         <button id="prev" type="button" aria-label="Previous song">⏮</button>
         <button id="play" type="button" class="play" aria-label="Play">▶</button>
         <button id="next" type="button" aria-label="Next song">⏭</button>
+        <button id="shuffle" type="button" class="opt" aria-pressed="false" aria-label="Shuffle">⤮</button>
+        <button id="repeat" type="button" class="opt" data-mode="off" aria-label="Repeat: off">↻</button>
+        <button id="song-menu" type="button" class="opt" data-pv="menu" data-start="" aria-label="Add to queue or playlist">＋</button>
         <button id="share" type="button" class="share">Share this song ↗</button>
       </div>
+      <button id="song-nowchip" type="button" class="song-chip" hidden></button>
       <p class="song-status" id="song-status" role="status" aria-live="polite"></p>
     </div>
   </main>
-  <script type="module" src="js/song/index.js"></script>
+  <script src="js/main.js"></script>
+  <script type="module" src="js/shell/index.js"></script>
   <script src="js/bgm.js"></script>
   <script src="js/pwa.js"></script>
 </body>

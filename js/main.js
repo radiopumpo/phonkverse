@@ -1,12 +1,6 @@
-const menuButton = document.querySelector('.menu-toggle');
-const nav = document.querySelector('.primary-nav');
-if (menuButton && nav) {
-  menuButton.addEventListener('click', () => {
-    const isOpen = nav.classList.toggle('open');
-    menuButton.setAttribute('aria-expanded', String(isOpen));
-  });
-  nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-    nav.classList.remove('open');
-    menuButton.setAttribute('aria-expanded', 'false');
-  }));
-}
+// Mobile menu. Delegated on document because the header is swapped on every soft navigation.
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('.menu-toggle'), nav = document.querySelector('.primary-nav');
+  if (btn && nav) { const open = nav.classList.toggle('open'); btn.setAttribute('aria-expanded', String(open)); return; }
+  if (nav && e.target.closest('.primary-nav a')) { nav.classList.remove('open'); document.querySelector('.menu-toggle')?.setAttribute('aria-expanded', 'false'); }
+});

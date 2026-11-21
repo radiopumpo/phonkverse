@@ -69,6 +69,7 @@ const BGM = { src: "assets/audio/phonkversebgm.mp3", volume: 0.2, fadeIn: 1.5, f
     end.append(toggle);
   };
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", mount); else mount();
+  window.addEventListener("pv:navigated", mount);   // the header is replaced on soft navigation (js/shell/router.js)
   paint();
 
   // remember position so the next page continues the loop

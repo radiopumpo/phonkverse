@@ -4,15 +4,17 @@
    - Images, textures, fonts, icons: cache-first.
    - Audio (.mp3) and Range requests are NOT intercepted: Safari needs real range responses, and tracks are large.
    Bump VERSION on every deploy that changes precached files. */
-const VERSION = "2026-11-04-1";
+const VERSION = "2026-11-21-1";
 const CACHE = `phonkverse-${VERSION}`;
 const SHELL = [
   "./", "index.html", "phonkita.html", "phonkazo.html", "phonkami.html", "phonkssons.html", "phonkov.html", "phonke.html", "phonkdon.html", "phonkhan.html", "song.html", "manifest.webmanifest",
-  "css/style.css", "css/song.css",
-  "js/main.js", "js/player.js", "js/bgm.js", "js/pwa.js", "js/tracks.js", "js/upcoming.js", "js/voices.js",
+  "css/style.css", "css/song.css", "css/player.css",
+  "js/main.js", "js/bgm.js", "js/pwa.js", "js/tracks.js", "js/upcoming.js", "js/voices.js",
+  "js/shell/index.js", "js/shell/router.js", "js/ui/dock.js", "js/ui/library.js", "js/pages/home.js", "js/pages/album.js", "js/pages/song.js",
+  "js/music/catalog.js", "js/music/engine.js", "js/music/queue.js", "js/music/playlists.js", "js/music/context.js", "js/music/tags.js",
   "js/globe/index.js", "js/globe/config.js", "js/globe/geo.js", "js/globe/earth.js", "js/globe/network.js",
   "js/globe/markers.js", "js/globe/controls.js", "js/globe/ui.js", "js/globe/scroll.js",
-  "js/song/index.js", "js/song/audio.js", "js/song/visual.js",
+  "js/song/visual.js",
   "vendor/three.module.min.js",
   "assets/globe/earth-night-4k.jpg", "assets/globe/earth-lights-2k.jpg", "assets/globe/earth-clouds-1k.png",
   "assets/images/home-hero-reference.webp", "assets/images/phonkami-album-board.jpg", "assets/images/radiopumpo-logo.jpg",

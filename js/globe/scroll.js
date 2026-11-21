@@ -1,5 +1,5 @@
 /** Publishes scroll progress (0..1 through the tall section) as CSS var --p and a callback. CSS does the choreography. */
-export function bindScrollProgress(section, sticky, onProgress) {
+export function bindScrollProgress(section, sticky, onProgress, signal) {
   const label = document.getElementById("world-progress-label");
   let queued = false;
   const calc = () => {
@@ -10,6 +10,6 @@ export function bindScrollProgress(section, sticky, onProgress) {
     if (label) label.textContent = p < .25 ? "01 — DISCOVER" : p < .7 ? "02 — INTERACT" : "03 — ENTER THE VERSE";
     onProgress(p);
   };
-  window.addEventListener("scroll", () => { if (!queued) { queued = true; requestAnimationFrame(calc); } }, { passive: true });
-  window.addEventListener("resize", calc); calc();
+  window.addEventListener("scroll", () => { if (!queued) { queued = true; requestAnimationFrame(calc); } }, { passive: true, signal });
+  window.addEventListener("resize", calc, { signal }); calc();
 }

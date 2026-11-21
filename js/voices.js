@@ -17,5 +17,8 @@ const soon = UPCOMING.map((u) => `
     <div class="soon-body"><span class="album-kicker">${u.country.toUpperCase()}</span><h3>${u.name}</h3><p>${u.blurb}</p></div>
   </article>`);
 
-const host = document.getElementById("voices-grid");
-if (host) host.innerHTML = [...live, ...soon].join("");
+/** Fills #voices-grid (called by js/pages/home.js on every visit to the home page). */
+export function renderVoices() {
+  const host = document.getElementById("voices-grid");
+  if (host) host.innerHTML = [...live, ...soon].join("");
+}

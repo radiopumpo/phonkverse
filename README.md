@@ -25,7 +25,6 @@ css/song.css                     song page only
 js/main.js                       mobile menu
 js/pwa.js                        registers sw.js
 sw.js · manifest.webmanifest     PWA (root level)
-js/player.js                     inline ▶ player on album pages
 js/bgm.js                        background music (see below)
 js/tracks.js                     song data used by song.html
 js/globe/                        globe modules (see below)
